@@ -4,10 +4,9 @@
   <button (click)="checkAge()">{{ 'AGE.CHECK' | translate }}</button>
 
   <p *ngIf="guessedAge !== null">
-    {{ 'AGE.RESULT' | translate:{ name: searchedName, age: guessedAge } }}
-  </p>
-  
-  <p *ngIf="guessedAge === null && searchedName">
-    {{ 'AGE.NOT_FOUND' | translate:{ name: searchedName } }}
-  </p>
+  {{ 'AGE.RESULT' | translate: { name: searchedName, age: guessedAge } }}
+</p>
+<p *ngIf="showNotFound">
+  {{ 'AGE.NOT_FOUND' | translate: { name: searchedName } }}
+</p>
 </div>

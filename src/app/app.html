@@ -1,12 +1,19 @@
-<div style="display: flex; gap: 40px; padding: 20px;">
+<div style="display: flex; gap: 40px; padding: 20px; min-height: 100vh;">
   
-  <nav style="display: flex; flex-direction: column; gap: 10px; border-right: 2px solid #eee; padding-right: 20px;">
-    <button routerLink="/counter" style="padding: 10px; cursor: pointer;">{{ 'MENU.COUNTER' | translate }}</button>
-    <button routerLink="/messages" style="padding: 10px; cursor: pointer;">{{ 'MENU.MESSAGES' | translate }}</button>
-    <button routerLink="/age-guesser" style="padding: 10px; cursor: pointer;">{{ 'MENU.AGE_GUESSER' | translate }}</button>
+  <nav style="display: flex; flex-direction: column; gap: 15px; border-right: 2px solid #eee; padding-right: 20px; min-width: 150px;">
+    <button routerLink="/counter" style="padding: 10px; cursor: pointer; background: #f8f9fa; border: 1px solid #ddd; border-radius: 4px;">
+      {{ 'MENU.COUNTER' | translate }}
+    </button>
+    <button routerLink="/messages" style="padding: 10px; cursor: pointer; background: #f8f9fa; border: 1px solid #ddd; border-radius: 4px;">
+      {{ 'MENU.MESSAGES' | translate }}
+    </button>
+    <button routerLink="/age-guesser" style="padding: 10px; cursor: pointer; background: #f8f9fa; border: 1px solid #ddd; border-radius: 4px;">
+      {{ 'MENU.AGE_GUESSER' | translate }}
+    </button>
   </nav>
 
   <main style="flex-grow: 1;">
-    <router-outlet></router-outlet> </main>
+    <router-outlet></router-outlet>
+  </main>
 
 </div>

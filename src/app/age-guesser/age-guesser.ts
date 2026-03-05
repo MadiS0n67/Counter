@@ -15,6 +15,7 @@ export class AgeGuesserComponent {
   userName: string = '';
   searchedName: string = '';
   guessedAge: number | null = null;
+  showNotFound: boolean = false; 
 
   constructor(
     private agifyService: AgifyService,
@@ -23,8 +24,15 @@ export class AgeGuesserComponent {
 
   checkAge() {
     if (this.userName) {
-      this.agifyService.getAge(this.userName).subscribe((data: any) => { 
-        this.searchedName = data.name;
+      this.searchedName = this.userName; 
+      this.agifyService.getAge(this.userName).subscribe(data => {
+        if (data && data.age !== null) {
+          this.guessedAge = data.age; 
+          this.showNotFound = false;
+        } else {
+          this.guessedAge = null;
+          this.showNotFound = true;
+        }
         this.cdr.detectChanges();
       });
     }

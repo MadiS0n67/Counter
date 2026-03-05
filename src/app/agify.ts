@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AgifyService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAge(name: string): Observable<any> {
-    return this.http.get(`https://api.agify.io/?name=${name}`);
+  getAge(name: string) {
+    
+    return this.http.get<any>(`https://api.agify.io/?name=${name}`);
   }
-
 }
