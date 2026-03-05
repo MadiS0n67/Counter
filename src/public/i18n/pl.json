@@ -1,0 +1,13 @@
+{
+  "MENU": {
+    "COUNTER": "Licznik",
+    "MESSAGES": "Wiadomości",
+    "AGE_GUESSER": "Zgadnij wiek"
+  },
+  "AGE": {
+    "TITLE": "Zgadnij wiek po imieniu",
+    "CHECK": "Sprawdź",
+    "RESULT": "Najprawdopodobniejszy wiek dla imienia {{name}} to: {{age}} lat.",
+    "NOT_FOUND": "Niestety nie potrafię zgadnąć wieku dla imienia {{name}}."
+  }
+}

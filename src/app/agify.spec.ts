@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Agify } from './agify';
+import { AgifyService } from './agify';
 
 describe('Agify', () => {
-  let service: Agify;
+  let service: AgifyService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(Agify);
+    service = TestBed.inject(AgifyService);
   });
 
   it('should be created', () => {

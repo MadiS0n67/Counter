@@ -1,9 +1,13 @@
-<div>
-  <h3>Zgadnij wiek po imieniu</h3>
-  <input type="text" [(ngModel)]="userName" placeholder="Wpisz imię...">
-  <button (click)="checkAge()">Check</button>
+<div class="container">
+  <h3>{{ 'AGE.TITLE' | translate }}</h3>
+  <input type="text" [(ngModel)]="userName" [placeholder]="'Wpisz imię...'">
+  <button (click)="checkAge()">{{ 'AGE.CHECK' | translate }}</button>
 
   <p *ngIf="guessedAge !== null">
-    Najprawdopodobniejszy wiek dla imienia <b>{{ searchedName }}</b> to: <b>{{ guessedAge }}</b> lat.
+    {{ 'AGE.RESULT' | translate:{ name: searchedName, age: guessedAge } }}
+  </p>
+  
+  <p *ngIf="guessedAge === null && searchedName">
+    {{ 'AGE.NOT_FOUND' | translate:{ name: searchedName } }}
   </p>
 </div>
