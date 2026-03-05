@@ -1,22 +1,11 @@
-<div style="display: flex; gap: 50px; padding: 40px; align-items: flex-start;">
-  <div style="display: flex; align-items: center; gap: 15px;">
-    <button (click)="decrement()">—</button>
-    <div style="border: 1px solid black; padding: 10px 50px; min-width: 50px; text-align: center;">
-      {{ count }}
-    </div>
-    <button (click)="increment()">+</button>
-  </div>
+<div style="display: flex; gap: 40px; padding: 20px;">
+  
+  <nav style="display: flex; flex-direction: column; gap: 10px; border-right: 2px solid #eee; padding-right: 20px;">
+    <button routerLink="/counter" style="padding: 10px; cursor: pointer;">Licznik</button>
+    <button routerLink="/messages" style="padding: 10px; cursor: pointer;">Wiadomości</button>
+  </nav>
 
-  <div style="width: 1px; background: black; height: 200px;"></div>
+  <main style="flex-grow: 1;">
+    <router-outlet></router-outlet> </main>
 
-  <div style="display: flex; flex-direction: column; gap: 10px;">
-    <div *ngFor="let msg of messages" style="border: 1px solid black; padding: 5px 15px; width: 250px;">
-      {{ msg }}
-    </div>
-
-    <div style="display: flex; gap: 10px; margin-top: 20px; align-items: center;">
-      <input type="text" [(ngModel)]="newMessage" placeholder="input" style="padding: 5px;">
-      <button (click)="sendMessage()" style="font-weight: bold; border: none; background: none; cursor: pointer;">Send</button>
-    </div>
-  </div>
 </div>
